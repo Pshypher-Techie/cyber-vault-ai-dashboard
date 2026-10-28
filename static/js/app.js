@@ -1,6 +1,11 @@
-// CYBER-VAULT Client Controller
+// CYBER-VAULT Client Controller (Biswajeet Shadangi Edition)
 document.addEventListener('DOMContentLoaded', () => {
   // Elements
+  const cinematicHud = document.getElementById('cinematic-hud');
+  const hudProgressBar = document.getElementById('hud-progress-bar');
+  const hudLogLine = document.getElementById('hud-log-line');
+  const hudTypingTitle = document.getElementById('hud-typing-title');
+  
   const authGate = document.getElementById('auth-gate');
   const dashboardView = document.getElementById('dashboard-view');
   
@@ -32,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scanStatusText = document.getElementById('scan-status-text');
   const footprintListContainer = document.getElementById('footprint-list-container');
   const repoGridContainer = document.getElementById('repo-grid-container');
+  const sectionsContainer = document.getElementById('sections-container');
 
   // AI Chat Elements
   const chatMessages = document.getElementById('chat-messages');
@@ -43,8 +49,45 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentUser = null;
   let dossierData = null;
 
-  // Initialize
-  checkAuth();
+  // Run Cinematic Intro on start
+  runCinematicBootSequence(() => {
+    checkAuth();
+  });
+
+  // --- CINEMATIC HUD BOOT SEQUENCE ---
+  function runCinematicBootSequence(onComplete) {
+    const steps = [
+      { progress: 20, log: "Mounting dual-isolated database schemas (users_auth.db & dossier_data.db)..." },
+      { progress: 45, log: "Verifying subject identity: BISWAJEET SHADANGI (B.Tech CSE 2nd Yr)..." },
+      { progress: 70, log: "Loading verified OSINT nodes: LinkedIn, GitHub, Instagram, Direct Telecom (+91 7847881225)..." },
+      { progress: 90, log: "Synthesizing YOLOv8 Safety Model & OmniRoute AI telemetry..." },
+      { progress: 100, log: "CYBER-VAULT ONLINE // SECURITY PROTOCOLS ENGAGED" }
+    ];
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      if (currentStep < steps.length) {
+        const s = steps[currentStep];
+        if (hudProgressBar) hudProgressBar.style.width = `${s.progress}%`;
+        if (hudLogLine) hudLogLine.textContent = s.log;
+        currentStep++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          if (cinematicHud) {
+            cinematicHud.style.opacity = '0';
+            cinematicHud.style.visibility = 'hidden';
+            setTimeout(() => {
+              cinematicHud.style.display = 'none';
+              if (onComplete) onComplete();
+            }, 700);
+          } else {
+            if (onComplete) onComplete();
+          }
+        }, 500);
+      }
+    }, 380);
+  }
 
   // --- AUTH CHECK ---
   async function checkAuth() {
@@ -226,28 +269,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderDossierView(data) {
     if (!data) return;
-    const { profile, footprints, repositories } = data;
+    const { profile, footprints, repositories, sections } = data;
 
-    // Profile Identity
+    // Profile Identity (Guaranteed BISWAJEET SHADANGI)
     if (profile) {
-      document.getElementById('hero-fullname').textContent = profile.full_name || 'Biswajeet Shadangi';
+      document.getElementById('hero-fullname').textContent = profile.full_name || 'BISWAJEET SHADANGI';
       document.getElementById('hero-alias').textContent = `@${profile.alias || 'Pshypher-Techie'}`;
       document.getElementById('hero-email').textContent = profile.email || 'biswajeetshadangi98@gmail.com';
-      document.getElementById('hero-location').textContent = profile.location || 'Odisha, India';
-      document.getElementById('hero-headline').textContent = profile.headline || 'AI & Computer Vision Engineer';
+      document.getElementById('hero-phone').textContent = profile.phone || '+91 7847881225';
+      document.getElementById('hero-location').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${profile.location || 'Koraput, Odisha, India'}`;
       document.getElementById('hero-bio').textContent = profile.bio || '';
-      document.getElementById('hero-academic').textContent = profile.academic_background || 'BPUT Technical Programs';
+      document.getElementById('hero-academic').textContent = `${profile.qualification || 'B.Tech CSE (2nd Yr)'} • ${profile.college || 'VITAM'} / ${profile.university || 'BPUT'}`;
       if (profile.avatar_url) {
         document.getElementById('hero-avatar').src = profile.avatar_url;
       }
+
+      // Update social links
+      if (profile.linkedin_url) document.getElementById('link-linkedin').href = profile.linkedin_url;
+      if (profile.instagram_url) document.getElementById('link-instagram').href = profile.instagram_url;
+      if (profile.twitter_url) document.getElementById('link-twitter').href = profile.twitter_url;
+      if (profile.phone) document.getElementById('link-phone').href = `tel:${profile.phone.replace(/\s+/g, '')}`;
     }
 
-    // Numbers & Telemetry Counters
+    // Counters
     animateCount('counter-repos', repositories ? repositories.length : 0);
     animateCount('counter-footprints', footprints ? footprints.length : 0);
-    animateCount('counter-confidence', 99, '%');
-    
-    // Footprint List Render
+    animateCount('counter-confidence', 100, '%');
+
+    // Footprints
     if (footprints && footprintListContainer) {
       footprintListContainer.innerHTML = '';
       footprints.forEach(fp => {
@@ -279,6 +328,120 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
         footprintListContainer.appendChild(item);
+      });
+    }
+
+    // 7 Sections Render (tab-sections)
+    if (sections && sectionsContainer) {
+      sectionsContainer.innerHTML = '';
+      sections.forEach(sec => {
+        const card = document.createElement('div');
+        card.className = 'topic-card';
+
+        let innerHTML = `
+          <div class="topic-header">
+            <i class="fas ${sec.icon}"></i>
+            <span>${escapeHtml(sec.title)}</span>
+          </div>
+        `;
+
+        const c = sec.content;
+        if (sec.section_key === 'qualifications') {
+          innerHTML += `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; font-family: var(--font-mono); font-size: 13px;">
+              <div style="background: rgba(3,10,13,0.7); padding: 14px; border-radius: 8px; border-left: 3px solid var(--teal-primary);">
+                <div style="color: #64748b; font-size: 11px; text-transform: uppercase;">Degree & Year</div>
+                <strong style="color: #fff; font-size: 15px;">${escapeHtml(c.degree)}</strong>
+                <div style="color: var(--teal-accent);">${escapeHtml(c.year_status)}</div>
+              </div>
+              <div style="background: rgba(3,10,13,0.7); padding: 14px; border-radius: 8px; border-left: 3px solid var(--emerald-accent);">
+                <div style="color: #64748b; font-size: 11px; text-transform: uppercase;">College & Affiliation</div>
+                <strong style="color: #fff; font-size: 14px;">${escapeHtml(c.institution)}</strong>
+                <div style="color: #94a3b8;">${escapeHtml(c.affiliation)}</div>
+              </div>
+            </div>
+          `;
+        } else if (sec.section_key === 'contacts') {
+          innerHTML += `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-family: var(--font-mono); font-size: 13px;">
+              <div style="background: rgba(3,10,13,0.6); padding: 10px; border-radius: 6px;">
+                <span style="color: var(--teal-primary);"><i class="fas fa-phone"></i> Phone:</span> <a href="tel:${c.phone}" style="color: #fff; text-decoration: none;">${c.phone}</a>
+              </div>
+              <div style="background: rgba(3,10,13,0.6); padding: 10px; border-radius: 6px;">
+                <span style="color: var(--teal-secondary);"><i class="fas fa-envelope"></i> Email:</span> <a href="mailto:${c.email}" style="color: #fff; text-decoration: none;">${c.email}</a>
+              </div>
+              <div style="background: rgba(3,10,13,0.6); padding: 10px; border-radius: 6px;">
+                <span style="color: var(--emerald-accent);"><i class="fas fa-map-marker-alt"></i> Location:</span> ${c.location}
+              </div>
+              <div style="background: rgba(3,10,13,0.6); padding: 10px; border-radius: 6px;">
+                <span style="color: #0077b5;"><i class="fab fa-linkedin"></i> LinkedIn:</span> <a href="${c.linkedin}" target="_blank" style="color: var(--teal-primary);">Profile &rarr;</a>
+              </div>
+              <div style="background: rgba(3,10,13,0.6); padding: 10px; border-radius: 6px;">
+                <span style="color: #e1306c;"><i class="fab fa-instagram"></i> Instagram:</span> <a href="${c.instagram}" target="_blank" style="color: var(--teal-primary);">@_pshypher_12_ &rarr;</a>
+              </div>
+              <div style="background: rgba(3,10,13,0.6); padding: 10px; border-radius: 6px;">
+                <span style="color: #fff;"><i class="fab fa-x-twitter"></i> X / Twitter:</span> <a href="${c.twitter}" target="_blank" style="color: var(--teal-primary);">@BISWAJEET140222 &rarr;</a>
+              </div>
+            </div>
+          `;
+        } else if (sec.section_key === 'skills') {
+          innerHTML += `
+            <div style="margin-bottom: 12px; font-family: var(--font-mono); font-size: 13px; color: var(--teal-primary);">
+              <i class="fas fa-location-arrow"></i> Origin Base: <strong>${escapeHtml(c.comes_from)}</strong>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+              ${c.core_skills.map(s => `<span class="meta-tag"><i class="fas fa-check"></i> ${escapeHtml(s)}</span>`).join('')}
+            </div>
+            <div style="font-size: 12px; color: #94a3b8; font-family: var(--font-mono);">
+              <strong>Core Languages:</strong> ${c.languages.join(' &bull; ')}
+            </div>
+          `;
+        } else if (sec.section_key === 'awards') {
+          innerHTML += `
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #cbd5e1;">
+              ${c.highlights.map(h => `<li><i class="fas fa-star" style="color: #fbbf24; margin-right: 8px;"></i>${escapeHtml(h)}</li>`).join('')}
+            </ul>
+          `;
+        } else if (sec.section_key === 'fields_of_interest') {
+          innerHTML += `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+              ${c.interests.map(item => `
+                <div style="background: rgba(3,10,13,0.6); padding: 14px; border-radius: 8px; border-left: 2px solid var(--teal-primary);">
+                  <div style="color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 4px;">${escapeHtml(item.title)}</div>
+                  <div style="font-size: 12px; color: #94a3b8;">${escapeHtml(item.desc)}</div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else if (sec.section_key === 'personal_about') {
+          innerHTML += `
+            <p style="font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 12px;">${escapeHtml(c.origin_roots)}</p>
+            <blockquote style="border-left: 3px solid var(--teal-primary); padding-left: 12px; color: var(--teal-primary); font-style: italic; margin-bottom: 14px; font-size: 13px;">
+              "${escapeHtml(c.motto)}"
+            </blockquote>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              ${c.hobbies.map(hob => `<span class="meta-tag" style="font-size: 11px;"><i class="fas fa-heart" style="color: #f43f5e;"></i> ${escapeHtml(hob)}</span>`).join('')}
+            </div>
+          `;
+        } else if (sec.section_key === 'internships') {
+          innerHTML += `
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              ${c.projects_experience.map(exp => `
+                <div style="background: rgba(3,10,13,0.6); padding: 14px; border-radius: 8px; border-left: 3px solid var(--emerald-accent);">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                    <strong style="color: #fff; font-size: 14px;">${escapeHtml(exp.role)}</strong>
+                    <span style="font-family: var(--font-mono); font-size: 11px; color: var(--emerald-accent);">${escapeHtml(exp.period)}</span>
+                  </div>
+                  <div style="color: var(--teal-accent); font-size: 12px; margin-bottom: 6px;">${escapeHtml(exp.org)}</div>
+                  <div style="color: #94a3b8; font-size: 12px;">${escapeHtml(exp.desc)}</div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        card.innerHTML = innerHTML;
+        sectionsContainer.appendChild(card);
       });
     }
 
@@ -351,16 +514,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!res.ok) return;
       const data = await res.json();
 
-      // Database 1 Metrics
       document.getElementById('db1-users-count').textContent = data.databases.database_1.stats.total_registered_users;
       document.getElementById('db1-audits-count').textContent = data.databases.database_1.stats.total_audit_events;
       
-      // Database 2 Metrics
       document.getElementById('db2-repos-count').textContent = data.databases.database_2.stats.total_repositories;
       document.getElementById('db2-verified-count').textContent = data.databases.database_2.stats.verified_footprint_sources;
       document.getElementById('db2-facts-count').textContent = data.databases.database_2.stats.ai_knowledge_facts;
 
-      // Audit Logs Table
       const auditTableBody = document.getElementById('audit-table-body');
       if (auditTableBody && data.audit_feed) {
         auditTableBody.innerHTML = '';
@@ -391,13 +551,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!query || !query.trim()) return;
     const cleanQ = query.trim();
 
-    // Append User Bubble
     appendChatMessage('user', cleanQ);
     chatInput.value = '';
     chatInput.focus();
 
-    // Append Thinking AI bubble
-    const thinkingBubble = appendChatMessage('ai', '<i class="fas fa-circle-notch fa-spin"></i> Consulting Biswajeet Intelligence Dossier...');
+    const thinkingBubble = appendChatMessage('ai', '<i class="fas fa-circle-notch fa-spin"></i> Consulting BISWAJEET SHADANGI Intelligence Dossier...');
 
     try {
       const res = await fetch('/api/ai/ask', {
@@ -489,4 +647,3 @@ document.addEventListener('DOMContentLoaded', () => {
     return parsed;
   }
 });
-

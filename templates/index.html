@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CYBER-VAULT :: AI Intelligence Dossier</title>
+  <title>CYBER-VAULT :: BISWAJEET SHADANGI (AI Intelligence Dossier)</title>
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -16,9 +16,27 @@
   <canvas id="particle-canvas"></canvas>
 
   <!-- ========================================================================= -->
+  <!-- 0. CINEMATIC BOOT HUD OVERLAY (Cyber Entry Sequence)                       -->
+  <!-- ========================================================================= -->
+  <div id="cinematic-hud" class="cinematic-hud-overlay">
+    <div class="hud-screen-box">
+      <div class="hud-scanline"></div>
+      <div class="hud-cyber-hex">
+        <i class="fas fa-brain"></i>
+      </div>
+      <div id="hud-typing-title" class="hud-title-typing">INITIALIZING CYBER-VAULT...</div>
+      <div id="hud-telemetry-subtitle" class="hud-telemetry-text">TARGET IDENT: BISWAJEET SHADANGI // CSE 2ND YR</div>
+      <div class="hud-progress-track">
+        <div id="hud-progress-bar" class="hud-progress-fill"></div>
+      </div>
+      <div id="hud-log-line" class="hud-init-logs">Mounting dual-isolated database schemas...</div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
   <!-- 1. AUTHENTICATION GATE SCREEN (Zero-Trust Security Barrier)              -->
   <!-- ========================================================================= -->
-  <div id="auth-gate" class="auth-gate-overlay">
+  <div id="auth-gate" class="auth-gate-overlay" style="display: none;">
     <!-- Login Card -->
     <div id="login-card-container" class="auth-card">
       <div class="auth-header">
@@ -26,7 +44,7 @@
           <i class="fas fa-fingerprint"></i>
         </div>
         <h2 class="auth-title">CYBER-VAULT GATEWAY</h2>
-        <p class="auth-subtitle">Restricted Access // Dual-Database Security Protocol</p>
+        <p class="auth-subtitle">Subject: BISWAJEET SHADANGI // Dual-Database Protocol</p>
       </div>
 
       <div id="auth-alert" class="alert-box alert-danger"></div>
@@ -69,7 +87,7 @@
           <i class="fas fa-user-plus" style="color: var(--emerald-accent);"></i>
         </div>
         <h2 class="auth-title">REGISTER VIEWER</h2>
-        <p class="auth-subtitle">Storer Identity will be saved in Database 1 (users_auth.db)</p>
+        <p class="auth-subtitle">Identity stored separately in Database 1 (users_auth.db)</p>
       </div>
 
       <div id="reg-alert" class="alert-box"></div>
@@ -110,7 +128,7 @@
           <i class="fas fa-brain"></i>
         </div>
         <div>
-          <div class="brand-title">CYBER-VAULT // INTELLIGENCE DOSSIER</div>
+          <div class="brand-title">CYBER-VAULT // BISWAJEET SHADANGI</div>
           <div class="brand-subtitle">AI-POWERED OSINT FOOTPRINT & ARCHITECTURAL RADAR</div>
         </div>
       </div>
@@ -136,9 +154,13 @@
       <button class="tab-btn active" data-tab="tab-identity">
         <i class="fas fa-id-card-clip"></i> Identity Dossier
       </button>
+      <button class="tab-btn" data-tab="tab-sections">
+        <i class="fas fa-layer-group"></i> 7 Dossier Dimensions
+        <span class="tab-badge" style="background: rgba(0,245,212,0.25);">NEW</span>
+      </button>
       <button class="tab-btn" data-tab="tab-osint">
         <i class="fas fa-satellite-dish"></i> Internet Footprint Radar
-        <span class="tab-badge" id="badge-footprints">LIVE</span>
+        <span class="tab-badge" id="badge-footprints">8 NODES</span>
       </button>
       <button class="tab-btn" data-tab="tab-repos">
         <i class="fas fa-code-fork"></i> Repositories & Vision AI
@@ -163,27 +185,54 @@
             <div class="avatar-scanner-ring"></div>
           </div>
           <div class="profile-info">
-            <h1 id="hero-fullname">Biswajeet Shadangi</h1>
+            <h1 id="hero-fullname">BISWAJEET SHADANGI</h1>
             <div style="font-family: var(--font-mono); color: var(--teal-primary); font-size: 15px; font-weight: 600;">
-              <span id="hero-alias">@Pshypher-Techie</span> &bull; <span id="hero-location">Odisha, India</span>
+              <span id="hero-alias">@Pshypher-Techie</span> &bull; <span id="hero-location"><i class="fas fa-map-marker-alt"></i> Koraput, Odisha, India</span>
             </div>
             
             <div class="profile-meta-tags">
+              <span class="meta-tag"><i class="fas fa-graduation-cap"></i> <span id="hero-academic">B.Tech CSE (2nd Yr) &bull; VITAM / BPUT</span></span>
+              <span class="meta-tag"><i class="fas fa-phone"></i> <span id="hero-phone">+91 7847881225</span></span>
               <span class="meta-tag"><i class="fas fa-envelope"></i> <span id="hero-email">biswajeetshadangi98@gmail.com</span></span>
-              <span class="meta-tag"><i class="fas fa-graduation-cap"></i> <span id="hero-academic">BPUT / Odisha Tech</span></span>
-              <span class="meta-tag"><i class="fas fa-shield-halved"></i> OSINT Verified</span>
               <span class="meta-tag"><i class="fas fa-eye"></i> YOLOv8 PPE Specialist</span>
+              <span class="meta-tag"><i class="fas fa-shield-halved"></i> OSINT Verified</span>
             </div>
 
             <p id="hero-bio" class="profile-bio">
-              Software engineer and AI practitioner specialized in deep learning, real-time computer vision (PPE safety compliance detection), and universal AI inference gateways.
+              Enthusiastic 2nd-year B.Tech CSE engineer from Koraput, Odisha, studying at VITAM under BPUT. Passionate about real-time Computer Vision (YOLOv8 industrial safety gear detection), deep neural networks, and scalable AI gateways.
             </p>
+
+            <!-- Social Links Matrix -->
+            <div class="social-links-bar">
+              <a id="link-linkedin" href="https://www.linkedin.com/in/biswajeet-shadangi-701590447" target="_blank" class="social-pill-btn">
+                <i class="fab fa-linkedin" style="color: #0077b5;"></i> LinkedIn
+              </a>
+              <a id="link-github" href="https://github.com/Pshypher-Techie" target="_blank" class="social-pill-btn">
+                <i class="fab fa-github" style="color: #fff;"></i> GitHub
+              </a>
+              <a id="link-instagram" href="https://www.instagram.com/_pshypher_12_" target="_blank" class="social-pill-btn">
+                <i class="fab fa-instagram" style="color: #e1306c;"></i> Instagram (@_pshypher_12_)
+              </a>
+              <a id="link-twitter" href="https://x.com/BISWAJEET140222" target="_blank" class="social-pill-btn">
+                <i class="fab fa-x-twitter" style="color: #fff;"></i> X (@BISWAJEET140222)
+              </a>
+              <a id="link-phone" href="tel:+917847881225" class="social-pill-btn" style="border-color: var(--emerald-accent);">
+                <i class="fas fa-phone-alt" style="color: var(--emerald-accent);"></i> Call Direct
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Quick Metrics Grid -->
       <div class="grid-4" style="margin-bottom: 24px;">
+        <div class="stat-card">
+          <div class="stat-label">Academic Status</div>
+          <div class="stat-value" style="font-size: 22px;">
+            <span>2nd Year</span>
+            <span class="stat-delta"><i class="fas fa-university"></i> BPUT</span>
+          </div>
+        </div>
         <div class="stat-card">
           <div class="stat-label">Verified Repositories</div>
           <div class="stat-value">
@@ -194,27 +243,20 @@
         <div class="stat-card">
           <div class="stat-label">Footprint Sources</div>
           <div class="stat-value">
-            <span id="counter-footprints">7</span>
+            <span id="counter-footprints">8</span>
             <span class="stat-delta"><i class="fas fa-check"></i> Indexed</span>
           </div>
         </div>
         <div class="stat-card">
           <div class="stat-label">OSINT Match Confidence</div>
           <div class="stat-value">
-            <span id="counter-confidence">99%</span>
+            <span id="counter-confidence">100%</span>
             <span class="stat-delta"><i class="fas fa-certificate"></i> Verified</span>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Database Isolation</div>
-          <div class="stat-value" style="font-size: 22px; color: var(--teal-primary);">
-            DUAL-DB
-            <span class="stat-delta"><i class="fas fa-lock"></i> 100% Sep</span>
           </div>
         </div>
       </div>
 
-      <!-- Highlights Matrix -->
+      <!-- Core Highlights -->
       <div class="grid-2">
         <div class="cyber-panel">
           <div class="panel-header">
@@ -233,45 +275,54 @@
                 Active in open-source LLM routing (OmniRoute), connecting 375+ providers, 1,400+ models, with quota-aware fallback and RTK+Caveman token compression.
               </p>
             </div>
-            <div style="background: rgba(6,182,212,0.05); padding: 14px; border-radius: 10px; border-left: 3px solid var(--teal-secondary);">
-              <h4 style="color: #fff; margin-bottom: 4px;"><i class="fas fa-code" style="color: var(--teal-secondary);"></i> Full-Stack Engineering & Persistence</h4>
-              <p style="font-size: 13px; color: #94a3b8;">
-                Expertise in Python, asynchronous APIs, strict database isolation (dual-database SQLite/PostgreSQL architecture), and reactive client applications.
-              </p>
-            </div>
           </div>
         </div>
 
         <div class="cyber-panel">
           <div class="panel-header">
-            <div class="panel-title"><i class="fas fa-fingerprint"></i> Internet Identity Footprint Breakdown</div>
+            <div class="panel-title"><i class="fas fa-location-crosshairs"></i> Roots & Academic Identity</div>
           </div>
-          <p style="font-size: 13px; color: #94a3b8; margin-bottom: 16px;">
-            Publicly cataloged accounts and verified digital traces discovered across global registries:
-          </p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-family: var(--font-mono); font-size: 13px;">
-            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(5,13,16,0.6); border-radius: 8px;">
-              <span><i class="fab fa-github" style="color: var(--teal-primary);"></i> GitHub Profile</span>
-              <a href="https://github.com/Pshypher-Techie" target="_blank" style="color: var(--teal-primary); text-decoration: none;">github.com/Pshypher-Techie &rarr;</a>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(3,10,13,0.6); border-radius: 8px;">
+              <span><i class="fas fa-mountain" style="color: var(--teal-primary);"></i> Origin / Hometown</span>
+              <span style="color: #cbd5e1; font-weight: 700;">Koraput, Odisha</span>
             </div>
-            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(5,13,16,0.6); border-radius: 8px;">
-              <span><i class="fas fa-at" style="color: var(--emerald-accent);"></i> Git Author Email</span>
-              <span style="color: #cbd5e1;">biswajeetshadangi98@gmail.com</span>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(3,10,13,0.6); border-radius: 8px;">
+              <span><i class="fas fa-graduation-cap" style="color: var(--emerald-accent);"></i> Current Degree</span>
+              <span style="color: #cbd5e1;">B.Tech CSE (2nd Year)</span>
             </div>
-            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(5,13,16,0.6); border-radius: 8px;">
-              <span><i class="fas fa-university" style="color: var(--teal-secondary);"></i> Academic Index</span>
-              <span style="color: #cbd5e1;">BPUT Technical Programs</span>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(3,10,13,0.6); border-radius: 8px;">
+              <span><i class="fas fa-building-columns" style="color: var(--teal-secondary);"></i> Institution</span>
+              <span style="color: #cbd5e1;">VITAM, Berhampur</span>
             </div>
-            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(5,13,16,0.6); border-radius: 8px;">
-              <span><i class="fas fa-shield-virus" style="color: #fbbf24;"></i> AI Safety Gear</span>
-              <span style="color: #cbd5e1;">PyTorch / YOLOv8 Detection</span>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(3,10,13,0.6); border-radius: 8px;">
+              <span><i class="fas fa-university" style="color: #fbbf24;"></i> Affiliation</span>
+              <span style="color: #cbd5e1;">BPUT Odisha</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 2: INTERNET FOOTPRINT RADAR & OSINT SCANNER -->
+    <!-- TAB 2: THE 7 COMPREHENSIVE DOSSIER DIMENSIONS -->
+    <section id="tab-sections" class="tab-content-panel" style="display: none;">
+      <div class="cyber-panel">
+        <div class="panel-header">
+          <div class="panel-title"><i class="fas fa-layer-group"></i> 7 Dossier Dimensions: Verified Profiles</div>
+          <div class="status-pill" style="font-size: 11px;">
+            <i class="fas fa-database"></i> Stored in Database 2
+          </div>
+        </div>
+        <p style="font-size: 13px; color: #94a3b8; margin-bottom: 24px;">
+          Comprehensive breakdown covering Qualifications, Contacts, Skills & Roots, Achievements, Fields of Interest, Personal Abouts, and Internships:
+        </p>
+        <div id="sections-container">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: INTERNET FOOTPRINT RADAR & OSINT SCANNER -->
     <section id="tab-osint" class="tab-content-panel" style="display: none;">
       <div class="cyber-panel">
         <div class="panel-header">
@@ -292,7 +343,7 @@
           <div>
             <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #fff;">Continuous Internet Trace Monitor</h3>
             <p style="font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 14px;">
-              The scanner continuously queries public APIs, code repositories, email verification services, and academic competition rosters to correlate Biswajeet Shadangi's internet identity in real time.
+              The scanner continuously queries public APIs, code repositories, verified phone lines, LinkedIn, and social registers to correlate BISWAJEET SHADANGI's digital footprint in real time.
             </p>
             <div style="font-family: var(--font-mono); font-size: 12px; color: var(--teal-primary);" id="scan-status-text">
               Status: System Idle &bull; Database 2 Synced
@@ -307,7 +358,7 @@
       </div>
     </section>
 
-    <!-- TAB 3: VERIFIED REPOSITORIES & VISION AI -->
+    <!-- TAB 4: VERIFIED REPOSITORIES & VISION AI -->
     <section id="tab-repos" class="tab-content-panel" style="display: none;">
       <div class="cyber-panel">
         <div class="panel-header">
@@ -325,7 +376,7 @@
       </div>
     </section>
 
-    <!-- TAB 4: AI INTELLIGENCE ASSISTANT (A.E.G.I.S.) -->
+    <!-- TAB 5: AI INTELLIGENCE ASSISTANT (A.E.G.I.S.) -->
     <section id="tab-ai-chat" class="tab-content-panel" style="display: none;">
       <div class="cyber-panel">
         <div class="panel-header">
@@ -338,36 +389,36 @@
         </div>
 
         <p style="font-size: 13px; color: #94a3b8; margin-bottom: 14px;">
-          Ask questions about Biswajeet's experience, safety gear vision models, OmniRoute AI gateway, verified email, or technical background:
+          Ask questions about Biswajeet's qualifications at VITAM/BPUT, phone/social contacts, Koraput roots, YOLOv8 models, or OmniRoute AI gateway:
         </p>
 
         <div class="quick-prompts">
-          <span class="prompt-chip" data-prompt="Who is Biswajeet Shadangi and what is his background?">
-            <i class="fas fa-user"></i> Who is Biswajeet?
+          <span class="prompt-chip" data-prompt="What are Biswajeet Shadangi's qualifications and current college?">
+            <i class="fas fa-graduation-cap"></i> Qualifications & VITAM
+          </span>
+          <span class="prompt-chip" data-prompt="What are his verified direct contacts, phone number, and social links?">
+            <i class="fas fa-phone"></i> Contacts & Phone
+          </span>
+          <span class="prompt-chip" data-prompt="Where does Biswajeet come from and what are his roots?">
+            <i class="fas fa-map-marker-alt"></i> Koraput Roots
           </span>
           <span class="prompt-chip" data-prompt="Tell me about his YOLOv8 safety gear compliance detector.">
             <i class="fas fa-hard-hat"></i> Safety Gear AI
           </span>
-          <span class="prompt-chip" data-prompt="What is OmniRoute and what role does he have?">
-            <i class="fas fa-network-wired"></i> OmniRoute AI Gateway
-          </span>
-          <span class="prompt-chip" data-prompt="What are his verified contact details and GitHub?">
-            <i class="fas fa-envelope"></i> Contact & GitHub
-          </span>
-          <span class="prompt-chip" data-prompt="Explain how the security and dual-database architecture works.">
-            <i class="fas fa-shield-alt"></i> Dual-DB Security
+          <span class="prompt-chip" data-prompt="What is OmniRoute and what is his contribution?">
+            <i class="fas fa-network-wired"></i> OmniRoute AI
           </span>
         </div>
 
         <div class="ai-chat-window">
           <div id="chat-messages" class="chat-messages">
             <div class="chat-bubble ai">
-              <strong>Greetings! I am A.E.G.I.S.</strong>, the AI Intelligence Assistant for <strong>Biswajeet Shadangi</strong>. 
-              I have direct access to his verified internet records, GitHub repositories, computer vision models, and academic background. What would you like to know?
+              <strong>Greetings! I am A.E.G.I.S.</strong>, the AI Intelligence Assistant for <strong>BISWAJEET SHADANGI</strong>. 
+              I have direct access to his verified B.Tech CSE records at VITAM/BPUT, direct phone and social contacts, Koraput roots, and YOLOv8 computer vision models. What would you like to know?
             </div>
           </div>
           <div class="chat-input-bar">
-            <input type="text" id="chat-input" class="chat-input" placeholder="Type a question about Biswajeet's skills, projects, or background..." />
+            <input type="text" id="chat-input" class="chat-input" placeholder="Ask about Biswajeet's qualifications, phone/socials, safety models, or projects..." />
             <button id="chat-send-btn" class="btn-cyber btn-cyber-primary">
               <i class="fas fa-paper-plane"></i> Send
             </button>
@@ -376,7 +427,7 @@
       </div>
     </section>
 
-    <!-- TAB 5: DUAL-DATABASE TELEMETRY & SECURITY AUDIT -->
+    <!-- TAB 6: DUAL-DATABASE TELEMETRY & SECURITY AUDIT -->
     <section id="tab-telemetry" class="tab-content-panel" style="display: none;">
       <div class="cyber-panel">
         <div class="panel-header">
@@ -387,7 +438,7 @@
         </div>
 
         <p style="font-size: 13px; color: #94a3b8; margin-bottom: 20px;">
-          As specified in the architectural mandate, all visitor/viewer accounts, passwords, sessions, and telemetry are isolated in a dedicated separate database from the personal dossier database.
+          All visitor/viewer accounts, passwords, sessions, and telemetry are isolated in a dedicated separate database from the personal dossier database.
         </p>
 
         <div class="grid-2" style="margin-bottom: 24px;">
@@ -428,7 +479,7 @@
 
         <!-- Audit Table -->
         <h3 style="font-size: 16px; color: #fff; margin-bottom: 12px;"><i class="fas fa-clock-rotate-left"></i> Real-Time Security Audit Feed (Database 1)</h3>
-        <div style="overflow-x: auto; background: rgba(5,13,16,0.6); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <div style="overflow-x: auto; background: rgba(3,10,13,0.6); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
           <table class="audit-table">
             <thead>
               <tr>
@@ -454,4 +505,3 @@
   <script src="/static/js/app.js"></script>
 </body>
 </html>
-

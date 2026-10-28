@@ -1,6 +1,6 @@
-# CYBER-VAULT // AI-Powered Personal Intelligence Dossier
+# CYBER-VAULT // BISWAJEET SHADANGI
 
-> A secure, AI-powered digital intelligence platform and portfolio dashboard in a bluish-green cyber aesthetic, displaying public internet footprint, verified engineering artifacts, and grounded AI assistant interactions.
+> A secure, AI-powered digital intelligence platform and portfolio dashboard in a bluish-green cyber aesthetic, displaying the verified public internet footprint, academic pedigree, verified engineering artifacts, and grounded AI assistant interactions for **BISWAJEET SHADANGI**.
 
 ---
 
@@ -8,6 +8,23 @@
 
 - **Public Live HTTPS URL**: [https://murray-wto-pct-cassette.trycloudflare.com](https://murray-wto-pct-cassette.trycloudflare.com)
 - **Local Development URL**: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+---
+
+## 👤 Verified Subject Identity
+
+- **Name**: **BISWAJEET SHADANGI**
+- **Moniker / Alias**: `Pshypher-Techie` / `_pshypher_12_`
+- **Current Qualification**: B.Tech in Computer Science & Engineering (CSE) - 2nd Year
+- **College**: Vignan Institute of Technology and Management (VITAM), Berhampur
+- **University Affiliation**: Biju Patnaik University of Technology (BPUT), Odisha
+- **Origin / Hometown**: Koraput, Odisha, India
+- **Direct Phone**: `+91 7847881225`
+- **Email**: `biswajeetshadangi98@gmail.com`
+- **LinkedIn**: [https://www.linkedin.com/in/biswajeet-shadangi-701590447](https://www.linkedin.com/in/biswajeet-shadangi-701590447)
+- **Instagram**: [https://www.instagram.com/_pshypher_12_](https://www.instagram.com/_pshypher_12_)
+- **X / Twitter**: [https://x.com/BISWAJEET140222](https://x.com/BISWAJEET140222)
+- **GitHub**: [https://github.com/Pshypher-Techie](https://github.com/Pshypher-Techie)
 
 ---
 
@@ -26,7 +43,7 @@ All personal details, code repositories, and AI chat endpoints are strictly guar
 
 ## 🛡️ Strict Dual-Database Architecture
 
-In compliance with strict data segregation requirements, viewer/user information is stored in a **physically separate database** from the personal dossier records:
+Viewer/user accounts and sessions are isolated in a **physically separate database** from the personal dossier records:
 
 1. **Database 1: `data/users_auth.db` (User Security & Auditing)**
    - `users`: User accounts, emails, PBKDF2 HMAC-SHA256 password hashes, unique salts, and roles.
@@ -34,34 +51,17 @@ In compliance with strict data segregation requirements, viewer/user information
    - `audit_logs`: Immutable security audit trail recording logins, failed attempts, dossier queries, and AI interactions.
 
 2. **Database 2: `data/dossier_data.db` (Internet Dossier & AI Knowledge Base)**
-   - `profile_info`: Verified identity (Biswajeet Shadangi, alias: `Pshypher-Techie`, email: `biswajeetshadangi98@gmail.com`).
-   - `footprint_sources`: Verified internet footprint (GitHub, Gravatar, BPUT Academic Records, YOLOv8 vision AI, OmniRoute).
+   - `profile_info`: Verified identity for **BISWAJEET SHADANGI** (VITAM/BPUT, Koraput, phone, socials).
+   - `dossier_sections`: 7 dedicated structured sections (Qualifications, Contacts, Skills & Roots, Achievements, Fields of Interest, Personal Abouts, Internships).
+   - `footprint_sources`: Verified internet footprint (LinkedIn, GitHub, Instagram, X/Twitter, Direct Telecom, Academic BPUT).
    - `repositories`: Live synchronized public repos (`OmniRoute`, `safety-gear-compliance-detector`, `safety-gear-detection-ai`, `worker-safety-ai`, `todo-list-app`).
-   - `ai_knowledge`: Contextual RAG knowledge base powering the AI assistant.
-   - `scan_logs`: Automated OSINT rescan history and diffs.
+   - `ai_knowledge`: Contextual RAG knowledge base powering the AI assistant (A.E.G.I.S.).
 
 ---
 
-## 🎨 Theme & Aesthetic: Cyber Bluish-Green
+## 🎨 Aesthetic & Cinematic Experience
 
-- **Palette**:
-  - Primary Neon Aquamarine: `#00f5d4`
-  - Electric Cyan: `#06b6d4`
-  - Deep Teal: `#14b8a6`
-  - Vivid Emerald: `#10b981`
-  - Dark Slate Cyber Navy: `#050d10`, `#0a1a20`
-- **Animations**:
-  - Interactive HTML5 canvas particle constellation responding to mouse repulsion.
-  - Pulsing radar scanner with target detection blips.
-  - Number increment counting animations for metrics.
-  - Glassmorphism frosted panels with 1px luminous neon borders.
-  - Streaming AI response feedback.
-
----
-
-## 🚀 One-Click Launch
-
-To restart the application locally and live at any time:
-- **Live Internet**: Double-click `start_live.bat`
-- **Local Only**: Double-click `start_local.bat`
-
+- **Cinematic Boot HUD**: High-tech cyber intro sequence with progress tracker and kernel logs upon initial entry.
+- **Palette**: Neon Cyan (`#00f5d4`), Electric Teal (`#06b6d4`), Vivid Emerald (`#10b981`), and Deep Oceanic Slate Navy (`#030a0d`, `#07151a`).
+- **Interactive Particle Constellation**: Canvas nodes responding with repulsion on mouse movement.
+- **Real-Time Radar**: Continuous OSINT footprint scan animation.
