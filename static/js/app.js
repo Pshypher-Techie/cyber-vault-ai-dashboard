@@ -80,13 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
               cinematicHud.style.display = 'none';
               if (onComplete) onComplete();
-            }, 700);
+            }, 250);
           } else {
             if (onComplete) onComplete();
           }
-        }, 500);
+        }, 200);
       }
-    }, 380);
+    }, 140);
   }
 
   // --- AUTH CHECK ---

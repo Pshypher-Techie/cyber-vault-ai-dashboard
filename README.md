@@ -6,7 +6,7 @@
 
 ## 🌐 Live URLs
 
-- **Public Live HTTPS URL**: [https://murray-wto-pct-cassette.trycloudflare.com](https://murray-wto-pct-cassette.trycloudflare.com)
+- **Public Live HTTPS URL**: [https://submitting-rescue-hiring-initiative.trycloudflare.com](https://submitting-rescue-hiring-initiative.trycloudflare.com)
 - **Local Development URL**: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ---

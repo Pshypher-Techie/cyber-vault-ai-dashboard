@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from fastapi import FastAPI, Request, Response, Depends, HTTPException, status
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -33,6 +34,9 @@ app = FastAPI(
     description="High-security intelligence dashboard displaying verified internet footprint and AI synthesis",
     version="1.0.0"
 )
+
+# Enable high-speed GZip compression for instant page loads
+app.add_middleware(GZipMiddleware, minimum_size=500)
 
 # Mount static directory
 STATIC_DIR = BASE_DIR / "static"
